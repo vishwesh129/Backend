@@ -1,0 +1,30 @@
+
+
+http module of Node problems
+1. no separation of concerns/messier code
+2. Handling POST request
+
+
+Express
+1. It's just a framework, which helps us to create server in a very easy and fast way.
+2. It's built on top of the HTTP module of node
+3. It has a rich middleware ecosystem
+
+
+method + route
+
+
+Query - ?name=value,   ?q1=v1&q2=v2
+Params - lectures/2346
+
+Stream -> sequence of bytes
+
+
+benchmarking -> checking the maximum threshold of a particular thing
+benchmarking server -> 
+    Cannon -npx autocannon url
+
+    https://www.npmjs.com/package/autocannon
+
+
+CRUD operations on a json

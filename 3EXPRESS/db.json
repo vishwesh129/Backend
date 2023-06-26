@@ -1,0 +1,10 @@
+{
+  "users": [
+    { "name": "vishwesh", "course": "dsa" },
+    { "name": "rupesh", "course": "python" },
+    { "name": "masai", "course": "frontend" },
+    { "name": "sathish", "course": "html" },
+    { "name": "pranay", "course": "html" }
+  ],
+  "orders": [{}, {}, {}]
+}
