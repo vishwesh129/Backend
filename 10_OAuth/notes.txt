@@ -1,0 +1,57 @@
+OAuth (Open Authorization) 
+
+OAuth is an authentication protocol that allows users to give access to their data 
+stored on one website or application to another website or application, without 
+giving away their username and password.
+
+
+How it works : 
+
+1. The user logs in to their account on the first website or 
+    application (also known as the "OAuth provider") that has the data they want to share.
+
+    Some Oauth Providers :  
+    1. Login with Google
+    2. Login with GitHub
+    3. Login with Facebook
+
+
+2. The user wants to share that data with a second website (also known as the "OAuth consumer").
+
+OAuth Consumer : 
+
+OAuth consumer/client is the website or application that is 
+requesting access to a user's data from a third-party service/OAuth provider.
+
+3. The second website/consumer requests access to the user's data on the first website/provider.
+4. The first website/provider then redirects the user to a login page to authenticate their identity.
+
+5. Once the user is authenticated, the first website/provider prompts the user to grant access to their data 
+    to the second website/consumer.
+6. The user confirms, and the first website/provider issues an access token to the second website/consumer.
+
+7. The second website/consumer can then use the access token to access the user's data on 
+    the first website/provider, without ever seeing the user's username and password.
+
+Advantages:
+1. Smooth login/better user experience
+2. Improved security
+3. Control access
+
+Disadvantages : 
+1. Complexity (while implementing on dev side)
+2. Dependency on third parties/Oauth providers
+
+Implementation steps : 
+
+* Choose an Oauth provider.
+* Register your application.
+* Install an Oauth library (Passport for example).
+* Set up the Oauth flow.
+* Use the access token to authenticate.
+
+
+
+1. choose the OAuth provider
+    GitHub - in live class video
+    Google - Post class video (Using Passport.js)
