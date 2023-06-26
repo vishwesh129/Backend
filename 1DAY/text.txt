@@ -1,0 +1,21 @@
+JS in Browser (runs Default) -> JS Engine (V8 engine , spidermonkey) helps to run the JavaScript in the Browser.
+
+JS in Computer -> We need to Install Node 
+
+terminal -> 
+~ node
+~ os.cpus()
+
+node architecture
+
+node = v8 + other things
+
+A
+import {x} from "./B"
+
+let x = require("./B");
+
+B
+export {x}
+
+module.exports = {x}
