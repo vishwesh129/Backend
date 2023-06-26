@@ -1,0 +1,26 @@
+https://www.npmjs.com/package/puppeteer
+
+
+Why Express ? 
+1 - It's easier, clean code
+2 - It has a rich ecosystem of middlewares
+
+
+Middleware?
+
+It's just a function, which runs between the request and response
+It has access to the request object,response object and has a "next" function
+
+Order does matter - runs on all routes below the mw
+
+Even when we have multiple mw - order matters
+
+
+--- 3 types of middlewares ---
+
+1. Custom Middleware - where we write our own logic - eg : logger
+2. Express Inbuilt middlewares - where we use express's middlewares -
+     eg : express.json(), 
+          express.text()
+          Router() Middleware
+3. Community/external middlewares -  multer, morgan, cors
