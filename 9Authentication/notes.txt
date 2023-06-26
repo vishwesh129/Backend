@@ -1,0 +1,88 @@
+Authentication
+    - It's just a way to identify someone
+    - who the user is / the identity of the user
+    - to track the user's progress?
+
+Authorisation
+    - what all access does someone have
+    - access based on the role etc
+    - "Not authorised" / Authorised personel only
+
+Authentication
+POST    /signup or /register
+        1. email and password
+        2. Store in the DB for future use(login etc)
+        3. res - signup successfull, please login
+
+POST    /login
+        1. email and password
+        2. is it a match in our DB
+         ? login success + JWT token
+         : login failed
+
+GET     /reports (protected route -> we only give access to those who are authenticated/logged in)
+        1. We can check if token is present
+        2. if token is valid
+        3. if 1&&2 ? reports : please login again
+
+        4. where can we accept the token - a) query b) params c) headers
+
+ 
+ Implement
+ 1. Basic express app
+ 2. /signup 
+ 3. UserModel and store in DB
+ 4. /login -> check and respond accordingly
+
+ How can the token be better than a simple same string
+ 1. Math.random - X
+ 2. uuid - X
+ 3. JWT - json web token
+
+        user A -> token A - Algo + payload + secret_key
+        user B -> token B - Algo + payload + secret_key
+        user C -> token C - Algo + payload + secret_key
+
+Essential Good practices
+
+1. token will be passed in a Header
+    Authorization :Bearer ${actual token}
+    req.headers.authorization.split(" ")[1]
+
+2. We don't store passwords in plain text - we'll hash it
+   bcrypt library
+    npm i bcrypt
+
+Encryption vs Hashing
+
+Encryption :
+
+Encryption - "Your messages are end to end ecrypted"
+Hello -> encrypted form -> ifmmp
+Encryption algo/logic/key - one letter forward
+
+ifmmp -> decrypted form -> hello
+Decryption algo/logic/key - one letter backward
+
+It is a reversible process
+
+Hashing : 
+
+It's an irreversible process
+nihal@123 -> SHA simple hashing algorithm -> 4eebf102437b733b31dd55df0f661eaf6ec9f41b
+nihal@123 -> SHA simple hashing algorithm -> 4eebf102437b733b31dd55df0f661eaf6ec9f41b
+
+
+
+{
+    email : "nihal@masaischool.com",
+    password : "4eebf102437b733b31dd55df0f661eaf6ec9f41b"
+}
+
+
+
+
+JWT - algorithm, payload, secret_key
+we'll store secret_key in .env
+
+for .env - dotenv
