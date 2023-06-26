@@ -1,0 +1,145 @@
+Database -> collections -> documents
+
+BSON
+
+field = key
+
+_id  = unix time + random number
+
+
+1. wherever the gender is male, add a key "random" : "yes"
+
+db.users.updateMany({gander : "male"} , {$set : {random : "yes"}})
+
+2. wherever the id is less than 20, I want add 
+group : "super"
+
+db.users.updateMany({id : {$lt : 20}}, {$set : {group : "super"}})
+
+$lt - less than 
+    find({id : {$lt : number}})
+
+$lte - less than equal
+
+$gt - greater than
+
+$gte - greater than equal
+
+$eq - equal
+
+$ne - not equal
+
+
+AND - && -  
+    .find({$and : [{},{},{}]})
+
+    .find({$and : [{gender : "Male"},{age : 24},{city : "Hyderabad"}]})
+
+OR - || 
+    .find({$or : [{},{},{}]})
+    .find({$or : [{id : {$lt : 15}}]})
+
+limit - limiting
+    .find({gender : "Female"}).limit(5);
+
+skip - simply skipping
+    .find({gender : "Female"}).skip(1);
+
+
+- db.users.find().skip(5).limit(3);        // 6,7,8
+
+
+for each page, you'll give 5 documents
+
+/users?page_no=3&&
+
+    page_no = 3
+    per_page = 5
+
+    .skip((page_no-1)*per_page).limit(5)
+
+
+sort
+    - ascending
+        db.users.find().sort({id : 1})
+        db.users.find().sort({first_name : 1})
+
+    - descending
+        db.users.find().sort({id : -1})
+
+
+    db.users.find({id : {$exists : true}}).sort({id : 1}).limit(5)
+
+
+CRUD + skip, sort, limiting
+
+filtering
+
+
+// Performance
+
+1. Indexing
+
+Index - 
+
+1000 users
+db.users.find({name : "zim"})                                  // O(n)
+1000th user in my collection
+
+_id has indexing by default
+
+db.users.find({_id : ObjectId("asdlfkjaldfjadfj")})           // O(1)
+1000th user in my collection
+
+
+
+MongoDB Compass - GUI
+
+Indexing:
+1. _id is indexed by default 
+2. we can index any field as well
+    db.users.createIndex({first_name : 1})
+
+
+-Why can't I just index everything?
+
+can we - yes, we can
+should we? - No, becoz clumsy and slow
+What to index? - the field/key which is used most
+
+
+
+Aggregation 
+Aggregate - total/complete/together
+
+Aggregation - most powerful feature of MongoDB
+
+
+
+client - /orders?page_no = 2
+
+1. const all_orders = db.orders.find()
+   const relevant_orders = all_orders.filter(())
+   res.send(relevant_orders)
+
+   OR
+
+2. const relevant_orders = db.orders.find().skip().limit
+    res.send(relevant_orders)
+
+
+   1000
+db.users.aggregate([{$limit : 10},{$sort : {age : 1}},{skip : 2}, {}])         
+
+// output of the each state depends on the previous state..
+
+
+db.users.aggregate({name : "xyz"}, {sort : {age : 1}}, {skip : 5}, {limit : 2})
+
+
+
+$match
+
+
+//mongodb Compass
+//mongodb Atlas
