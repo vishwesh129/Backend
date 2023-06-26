@@ -1,0 +1,46 @@
+Blog application
+
+Multi user blog application
+
+n number of users in our application
+m number of blogs in our application
+
+A user should be able to read all the blogs (his/her blogs + other users blogs)
+A user should be able to modify/delete only his/her blogs
+
+User collection - /signup and /login
+
+
+Relationship 
+Independent/parent - user
+dependent/child - blog
+
+
+Blog
+/blogs
+/blogs/create
+/blogs/delete/:blogID
+
+
+A - Aman
+B - Bob
+
+
+1. Will a user who's not signed in - can he delete any blog? - No - Done
+2. Will Bob be able to delete Bob's blogs? - Yes - Done
+3. Should Bob be able to delete Aman's blogs? - No - Done
+
+
+Frontend 
+
+signup page - POST /signup -> sign up successfull
+
+login page - email, password - POST /login -> {msg, token}
+
+save token in the localstorage
+
+blogs page - GET /blogs (Authorization : Bearer ${token}) -> all the blogs
+
+createblog page - title, description, category - POST /blogs/create 
+
+logout page logic - delete the token from localstorage
