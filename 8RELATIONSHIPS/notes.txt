@@ -1,0 +1,105 @@
+1. Mongoose - in Express Server
+
+Soft delete 
+status codes - 404, 200, 201, 500
+
+2. Relationships
+
+Relationship - It's a way two or more people/things/collections/entities are connected with each other
+
+Entity - 1) Users 2) Restaurants 3) Orders 4) Reviews
+
+
+**Users**
+_id //unique ID - 1001
+name,
+age,
+city,
+blood_group,
+aadhar_no,
+phone_no,
+....
+
+**Instructors**
+_id //unique ID made by Mongo
+user_id
+teaching_experience : 2years,
+average_rating_in_a_block : 4.3,
+expertise : MERN
+course : Backend
+
+**BDteam**
+_id
+user_id
+incentives
+.....
+
+
+
+Users
+_id,
+name,
+email,
+phone_no,
+city
+
+
+Blogs
+_id,
+user_id
+title,
+description,
+content,
+view_count
+
+
+Independent's ID in the dependent // Dependent will always have the ID of the Independent
+
+Independent/Parent entity - User
+Dependent/Child entity - Blog
+
+
+
+**Posts** - Independent/Parent
+_id 
+title,
+description,
+image,
+created time,
+view_count
+
+**comments** - Dependent/Child
+_id,
+post_id
+content,
+no_of_likes
+
+
+10 posts
+
+PostModel.find({}) // gets all the posts
+
+post 1 - 5 comments
+post 2 - 12 comments 
+post 3 - 0 comments
+post 4 - 2 comments
+post 5 - 1000 comments
+post 6 - 7 comments
+post 7 - 1 comments 
+post 8 - 10 comments
+post 9 - 12 comments
+
+
+1. Post model without comments - this one is faster
+2. Post model with comments in array 
+
+One to One : Dependent will always have the ID of the Independent
+One to Many :  Dependent will always have the ID of the Independent
+Many to Many relationship : Either will work
+
+
+Why?
+
+Blog application
+
+2 users - A and B came and created blogs
