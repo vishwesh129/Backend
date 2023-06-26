@@ -1,0 +1,80 @@
+Database 
+    - it's a place to store and retrieve data
+    - It's a software that's very much optimised to do CRUD+ operations
+
+
+
+Types 
+ SQL - Structured Databases
+        - Table, rows, columns      
+        - MySQL, Postgress etc
+        - Rigid/not Flexible
+        - well established, Banks
+        - learning curve is comparatively more
+
+ NoSQL - Flexible Databases
+       - No rigid structure 
+       - MongoDB, Cassandra
+       - Most startups
+       - learning curve is comparatively less
+
+Key-value Databases
+ - localstorage
+ - Redis
+
+
+NoSQL:
+
+MongoDB
+ - NoSQL Database
+ - Database
+        - Collections
+            - Documents
+ - Queries - Syntax is very similar to Javascript
+
+
+Installation 
+
+
+Queries - 
+
+show dbs - shows all databases
+use dbname - 1) to use that database if it exists 2)Creates a new one if it doesn't exist
+show collections - shows all collections
+
+Create collection - 1) db.createCollection("collection_name") 2) db.collection_name.insert()
+
+
+CRUD
+
+DB - ptu7
+    collection - students
+                documents - 
+
+1) Create -> 
+    db.collection_name.insertOne({})
+    db.collection_name.insertMany([{},{}])
+
+    _id is automatically created by MongoDB
+
+
+2) Read 
+     db.collection_name.findOne()
+     db.collection_name.find()
+     db.collection_name.find({//write the criteria})
+
+Document -> 
+        JSON -> BSON
+        Keys are also called Fields
+
+
+3) Update
+   db.students.updateOne(matching criteria , the updated data)
+
+   db.students.updateOne({name : "Bharat"} , {$set : {city : "chennai"}})
+   db.students.updateMany({name : "Bharat"} , {$set : {city : "chennai"}})
+
+           
+          
+4) Delete
+    db.students.deleteOne({matching criteria})
