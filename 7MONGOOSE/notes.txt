@@ -1,0 +1,57 @@
+to have a connection between the Database(MongoDB) and our server(Node and Express)
+
+ORM's/Driver
+
+1. MongoDB client
+2. Mongoose
+3. Sequelize (to connect to MySQL)
+4. Prisma
+
+
+Mongoose : 
+1. helps us to connect the server <--> Database
+2. Define the structure of the document
+3. It also helps us with validation (UI level, API level, on the Database level)
+
+
+
+Different Models for Different collections/entities
+
+Inside details of a Model -> blueprint/schema
+
+
+Let us connect our Database using mongoose 
+
+
+
+1) connecting - done - mongoose.connect
+
+2) creating the structure/models - mongoose.model
+    a) The Model name's first letter will always be capital
+       like constructor function, class, model
+    b) __v - versionKey - keeps track of the version
+
+3) Validation
+        a) Typecasting -> type - number, string, casting - changing/manipulating/trying to fit in
+
+        "23" -> Typecasted to a Number? -> Yes
+        "abc" -> Typecasted to a Number? -> No
+         56 -> Typecasted to a String? -> Yes
+
+        default
+        enum
+
+
+InsertOne 
+.save() method
+
+timestamps
+
+
+.lean() -> skips hydrating  
+
+
+1. CE assignment : 
+
+
+2. DLC/feedback - 
