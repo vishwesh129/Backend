@@ -1,0 +1,44 @@
+Authentication - Identifying the user/ who the user is
+
+Authorisation - Determining and enforcing what access does someone/user have
+
+RBAC - Role Base Access Control
+
+Masai LMS - 
+    student - sign in/authenticate - Authorisation(you'll be able to access only lectures of your courses)
+    admin/staff - sign in/authenticate -  Authorisation(Create, update, delete a lecture of any course and so on)
+
+
+Implementation steps : 
+
+Pre requisite : Authentication
+
+1. Define the possible roles
+2. Mapping of roles to the routes that they need to have access to
+3. Write the logic to ensure only permitted roles are able to access a particular thing
+
+
+Amazon
+    customer -> read the products 
+    seller -> read the products, create, update, delete products 
+    super admin -> 
+
+
+Roles
+
+customer - default
+seller
+
+admin - Tree structure - 
+
+
+
+
+while generating token, we embedded the user._id
+
+in authenticate middleware, the token is decoded, the userID is added to the request object
+(why? so that we don't repeat this taking out token, verifying, decoding part again)
+
+in authorisation middleware, we take the userID from the request object, find in DB that user, and take out it's role
+and we check if this user's role is a permittedRole ? next() : unauthorised
+
